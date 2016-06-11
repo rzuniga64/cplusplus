@@ -1,0 +1,26 @@
+Problem 5. Array functions: Write and test the following functions. 
+Consider adding them to the
+ArrayFunctions.cpp file that was posted after lecture.
+
+a. sumPerfect: An integer is said to be a perfect number if the sum of 
+its divisors (including 1 but
+not the number itself) is equal to the number. Given a function called 
+isPerfect, which receives
+an integer and returns a bool indicating whether the integer is perfect, 
+sumPerfect should return
+the sum of all the perfect numbers in the array.
+
+b. clipArray: Given the function below, the clipArray function should receive 
+an array of real
+numbers (and its size) and a minimum and maximum value. Each element in the 
+array that is
+below the minimum should be replaced by the minimum, and elements above the 
+maximum should
+replaced by the maximum.
+double clip(double val, double min, double max) {
+    return (val < min ? min : (val > max ? max : val));
+}
+
+c. arrayMax: Receives an array of real numbers (and its size) and a reference 
+to another integer,
+maxIdx. The function

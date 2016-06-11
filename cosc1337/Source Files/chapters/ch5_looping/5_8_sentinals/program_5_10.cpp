@@ -1,0 +1,1 @@
+A shaped area where text appears

@@ -1,0 +1,15 @@
+Johnson#Bob#1200
+Bird#Big#1600
+Jefferson#Gina#1500
+Robinson#Gordon#1250
+Grover#Super#1575
+Hooper#Harold#1400
+Snuffleupagus#Aloyius#1180
+Rodriguez#Luis#1351
+Frog#Kermit#1450
+Monster#Cookie#1700
+Rodriguez#Maria#1350
+von Count#Count#1470
+Robinson#Susan#1501
+Johnson#Mister#1100
+Grouch#Oscar#1000
