@@ -1,9 +1,7 @@
 //************************************************************************
 //
-//	Assignment:		Exercise 2
 //	File:			main.cpp
 //	Author:			Raul Zuniga
-//	Due Date:		July 5, 2000
 //	Description:	An inventory program utilizes an inventory class to 
 //					buy and sell quantities of widgets.  The program is 
 //					divided into three parts.
@@ -22,10 +20,7 @@
 //					This program utilizes three different search methods--
 //					linear, binary, and recursive binary to search for
 //					the given part number in the array of objects.
-
-//	Assignment:		Exercise 3
-//	Due Date:		July 19, 2000			
-//		
+//	Revision 1
 //				  - Added overloaded plus(+), minus(-)and assignment(=) 
 //					operators to the inventory class. The plus and minus 
 //					operators are used to add/subtract an integer from 
