@@ -1,0 +1,6 @@
+Abbott	Mike	543-88-6766	87 79 90 89 	B	86
+Berly	Steve	444-99-5433	90 95 81 100 	A	91
+Gato	Carl	232-56-3022	52 60 62 58 	F	58
+Gilly	Dave	999-44-8888	75 78 80 72 	C	76
+Robert	L.	542-84-9999	80 75 80 54 	C	72
+Class Exam Averages:		76 77 78 74
