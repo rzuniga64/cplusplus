@@ -7,7 +7,7 @@
 //
 // 	Description: 	This program utilizes the Standard Template Library
 //					(STL) to design and code a program to handle
-//					linked list, stack and queue.
+//					linked list, stack_ll and queue_ll.
 //	Requirements:	List:
 //					1. Fill the list
 //					2. Display the list
@@ -17,12 +17,12 @@
 //					6. Display the list
 //		
 //					Stack:
-//					1. Fill the stack
+//					1. Fill the stack_ll
 //					2. Display in the opposite order
 //
 //					Queue:
-//					1. Fill the queue
-//					2. Display the queue
+//					1. Fill the queue_ll
+//					2. Display the queue_ll
 //				
 //************************************************************************
 #include <fstream>
@@ -35,8 +35,8 @@ using namespace std; 					//introduces namespace std
 int main( void )
 {
 	list<int> lst; 						//create an empty list
-	stack<int> stck;					//create an empty stack
-	queue<int> que;						//create an empty queue
+	stack<int> stck;					//create an empty stack_ll
+	queue<int> que;						//create an empty queue_ll
 	int i;
 	
 	ofstream fout( "stl.out");		 	//open file for output
@@ -45,8 +45,8 @@ int main( void )
 	for (i=0; i<10; i++) 
 	{
 		lst.push_back(i);				//fill the list
-		stck.push(i);					//fill the stack
-		que.push(i);					//fill the queue
+		stck.push(i);					//fill the stack_ll
+		que.push(i);					//fill the queue_ll
 	}	
 	
 	list<int>::iterator p = lst.begin();//point to beginning of list
@@ -87,7 +87,7 @@ int main( void )
 	}
 	fout << "\n\n";
 	
-	fout << "Stack in reverse order:\n";//display stack in reverse order
+	fout << "Stack in reverse order:\n";//display stack_ll in reverse order
 	while(stck.size())
 	{
 		fout << stck.top();
@@ -95,7 +95,7 @@ int main( void )
 	}
 	fout << "\n\n";
 	
-	fout << "Queue:\n";					//display the queue 
+	fout << "Queue:\n";					//display the queue_ll
 	while(que.size())
 	{
 		fout << que.front();

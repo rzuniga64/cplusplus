@@ -26,7 +26,7 @@
 	 //int *pint = &myValue; // Illegal!
 	 //int myValue;
 
-	 // In most computers, memory at address 0 is inaccessible to user programs because it is
+	 // In most computers, memory at address 0 is inaccessible to user labs because it is
 	 // occupied by operating system data structures. This fact allows programmers to signify that
 	 // a pointer variable does not point to a memory location accessible to the program by
 	 // initializing the pointer to 0. For example, if ptrToint is a pointer to int, and ptrTofloat
