@@ -1,7 +1,9 @@
+#ifndef QUEUE_3358_H
+#define QUEUE_3358_H
+
 // File name: queue_3358_LL.h
 //
 // a Queue ADT
-//
 // This implentation uses a linked list
 // This implementation is a template
 
@@ -156,5 +158,4 @@ ItemType Queue_3358 <ItemType>::dequeue()
     return value;
 }
 
-
-
+#endif
