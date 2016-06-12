@@ -1,10 +1,12 @@
+#ifndef LIST_3358_LL_H_
+#define LIST_3358_LL_H_
+
 // File name: stack_3358_LL.h
 //
 // a Stack ADT
 //
-// This implentation uses a linked list
+// This implementation uses a linked list
 // This implementation is a template
-
 
 #include <assert.h>
 
@@ -14,7 +16,6 @@ template<class ItemType>
 class Stack_3358 {
     
 public:
-    
     //***********************************************************
     // Stack_3358: default constructor
     // Preconditions: None.
@@ -66,17 +67,13 @@ public:
     //    removed element is returned.
 
     ItemType pop();
-    
-    
 private:
-    
     struct Node {         // node type for singly-linked-list
         ItemType data;
         Node *next;
     };  
     
     Node *head;           // points to top of stack
-    
 }; 
 
 /*******************************
@@ -112,14 +109,11 @@ Stack_3358<ItemType>::Stack_3358(const Stack_3358 & src)
     }
 } 
 
-
-
 template<class ItemType>
 void Stack_3358 <ItemType>::makeEmpty()
 {
     while (!isEmpty())
         pop();
-    
 }
 
 template<class ItemType>
@@ -132,7 +126,6 @@ template<class ItemType>
 bool Stack_3358 <ItemType>::isFull() const
 {
     return false;
-    
 }
 
 
@@ -147,9 +140,7 @@ void Stack_3358 <ItemType>::push(const ItemType& newItem)
     //insert at head of list
     temp->next = head;
     head = temp;
-    
 }
-
 
 template<class ItemType>
 ItemType Stack_3358 <ItemType>::pop()
@@ -166,5 +157,4 @@ ItemType Stack_3358 <ItemType>::pop()
     return value;
 }
 
-
-
+#endif

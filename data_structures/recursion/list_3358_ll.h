@@ -1,15 +1,5 @@
-#ifndef LIST_3358_H
-#define LIST_3358_H
-
-/*
-* lab3_3358_ll.h
-*
-*  Created on: Feb 27, 2015
-*      Author: Roy
-*/
-
-#ifndef LAB3_3358_LL_H_
-#define LAB3_3358_LL_H_
+#ifndef LIST_3358_LL_H_
+#define LIST_3358_LL_H_
 
 // File Name: list_3358_LL.h
 //
