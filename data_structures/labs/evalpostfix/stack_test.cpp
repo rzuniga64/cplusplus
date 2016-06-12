@@ -12,26 +12,26 @@ void showStack(Stack_3358<int> temp);
 
 int main() {
 
-	Stack_3358<int> myStack;   //stack of ints
+	Stack_3358<int> myStack;   //stack_ll of ints
 
 
 	if (myStack.isEmpty())
-		cout << "int stack is empty" << endl;
+		cout << "int stack_ll is empty" << endl;
 	else
-		cout << "int stack is not empty" << endl;
+		cout << "int stack_ll is not empty" << endl;
 
 	myStack.push(42);
 
 	if (myStack.isEmpty())
-		cout << "int stack is empty" << endl;
+		cout << "int stack_ll is empty" << endl;
 	else
-		cout << "int stack is not empty" << endl;
+		cout << "int stack_ll is not empty" << endl;
 
 	myStack.push(52);
 
 	myStack.push(12);
 
-	cout << "test pushes to int stack" << endl;
+	cout << "test pushes to int stack_ll" << endl;
 	showStack(myStack);
 
 	Stack_3358<int> myStack2 = myStack; //copy constructor
@@ -40,7 +40,7 @@ int main() {
 
 	myStack.pop();
 
-	cout << "test pops from original int stack" << endl;
+	cout << "test pops from original int stack_ll" << endl;
 	showStack(myStack);
 
 	cout << "show copied Stack, tests copy constructor" << endl;
@@ -57,7 +57,7 @@ int main() {
 
 void showStack(Stack_3358<int> temp) {  //uses copy constr!!
 
-	cout << "stack from top " << endl;
+	cout << "stack_ll from top " << endl;
 	while (!temp.isEmpty()) {
 		cout << temp.pop() << endl;
 

@@ -6,9 +6,9 @@
 using namespace std;
 
 //************************************************************************************
-// eval: returns a value when a specific opeator operates on two numbers oon the stack
-// Preconditions: numbers on the stack are integers.
-// Postconditions: the result of the operation on two numbers on the stack
+// eval: returns a value when a specific opeator operates on two numbers oon the stack_ll
+// Preconditions: numbers on the stack_ll are integers.
+// Postconditions: the result of the operation on two numbers on the stack_ll
 
 int performOperation(int num1, int num2, char operation) {
 	switch (operation){
@@ -22,8 +22,8 @@ int performOperation(int num1, int num2, char operation) {
 
 //************************************************************************************
 // isOperator: returns true if input is a '+', '-', '*', or '/'
-// Preconditions: numbers on the stack are integers.
-// Postconditions: the result of the operation on two numbers on the stack
+// Preconditions: numbers on the stack_ll are integers.
+// Postconditions: the result of the operation on two numbers on the stack_ll
 bool isOperator(char ch)
 {
 	if (ch == '+' || ch == '-' || ch == '*' || ch == '/')
@@ -35,8 +35,8 @@ bool isOperator(char ch)
 //************************************************************************************
 // evalPostFix: evaluates the postfix express. It supports multiple digit integers
 //				and looks for a valid expression.
-// Preconditions: numbers on the stack are integers.
-// Postconditions: the result of the operation on two numbers on the stack
+// Preconditions: numbers on the stack_ll are integers.
+// Postconditions: the result of the operation on two numbers on the stack_ll
 
 bool evalPostFix(Stack_3358<int>  & stack,  const string expression) {
 	bool isExprValid = false;
@@ -59,7 +59,7 @@ bool evalPostFix(Stack_3358<int>  & stack,  const string expression) {
 		}  
 		if (!isdigit(ch) && index > 0) {
 			// a space is found and there is a operand in the buffer
-			// convert the operand to an integer and push it onto the stack
+			// convert the operand to an integer and push it onto the stack_ll
 			buffer[index] = '\0';
 			stack.push(atoi(buffer));
 			stackSize++;
@@ -67,7 +67,7 @@ bool evalPostFix(Stack_3358<int>  & stack,  const string expression) {
 		} 
 		if (isOperator(ch)) {
 			// an operator was found so pop the top two
-			// operands from the stack and evaluate them
+			// operands from the stack_ll and evaluate them
 			// using the operator.
 			if (stackSize > 1) {
 				op1 = stack.pop();
@@ -80,7 +80,7 @@ bool evalPostFix(Stack_3358<int>  & stack,  const string expression) {
 				break;
 			}
 	 
-			// push the value obtained after evaluating the expression onto the stack
+			// push the value obtained after evaluating the expression onto the stack_ll
 			stack.push(performOperation(op1, op2, ch));
 			stackSize++;
 		} 
