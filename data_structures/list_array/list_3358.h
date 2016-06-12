@@ -38,16 +38,15 @@ public:
     // Postconditions: New list is created, which is a deep copy of src List.
     //   Cursor position is preserved.
     
-//    List_3358 ( const List_3358 & src );
+    List_3358 ( const List_3358 & src );
     
     //***********************************************************
     // ~List_3358: destructor
     // Preconditions: None.
     // Postconditions: List is destroyed, if dynamically allocated.
     
-//    ~List_3358 ( );
-    
-    
+    ~List_3358 ( );
+
     //************************************
     // insert:
     // Preconditions: List is not full.
@@ -57,8 +56,7 @@ public:
     //   If the cursor is at EOL, the new item is the last element.
     
     void insert ( const int & item );
-    
-    
+
     //************************************
     // remove:
     // Preconditions: Cursor is not at EOL and list is not empty.
@@ -67,7 +65,6 @@ public:
     //   or EOL if the removed item was the last element in the list.
     
     void remove ( );
-    
     
     //************************************
     // resetFront:
@@ -84,8 +81,7 @@ public:
     //   or EOL if the list is empty.
     
     void resetBack ( );
-    
-    
+
     //************************************
     // advance:
     // Preconditions: None.
@@ -103,8 +99,7 @@ public:
     //   If it was EOL, it remains EOL.
     
     void backup ( );
-    
-    
+
     //*******************
     // isEmpty:
     // Preconditions: None.
@@ -112,8 +107,7 @@ public:
     //   and false otherwise.
     
     bool isEmpty ( ) const;
-    
-    
+
     //*******************
     // atEOL:
     // Preconditions: None.
@@ -130,22 +124,18 @@ public:
     //  of elements, and false otherwise.
     
     bool isFull ( ) const;
-    
-    
+
     //*******************
     // getCurrent:
     // Preconditions: Cursor is not at EOL.
     // Postconditions: Returns a copy of the element at the cursor.
     
     int getCurrent ( ) const;
-    
-    
+
 private:
-    
     int values[MAX_ITEMS];  //the list of items in an array
     int cursor;             //the current position
     int currentSize;        //the actual number of elements in the array
-    
 };
 
 #endif
