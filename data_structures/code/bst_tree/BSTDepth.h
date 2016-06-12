@@ -49,15 +49,10 @@ using namespace std;
 	std::size_t BSTDepth<Item>::computeDepth() 
 	{
 		std::size_t Depth=0, MaxDepth=0;
-		
 		myNode<Item>* root_ptr;
-		
 		root_ptr = myBST.root();
-		
 	 	FindMaxDepth( root_ptr, Depth, &MaxDepth );
-	 	
 	 	return MaxDepth;
-		
 	}
 	
 	template <class Item>

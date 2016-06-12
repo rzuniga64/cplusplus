@@ -29,7 +29,7 @@ Note: vector is a templated class.
 
 TEMPLATES
 
--	C++ provides templates to implement generic
+-	C++ provides template to implement generic
 	functions and classes.
 -	A function template is not a function, it is a
 	design or pattern for a function.
@@ -46,16 +46,16 @@ includes the type in angled brackets: <int>
 	unless/until it encounters a call to the function.
 -	At that point, the compiler substitutes your type for
 	the type variable, and then compiles the newly
-	generated function as if you’d written the function
+	generated function as if youï¿½d written the function
 	that way yourself.
 
 	CLASS TEMPLATES
 	Template classes work similarly to template
 	functions with the following exceptions
 -	The compiler will never guess at type argument for a
-	template class, you must always use <…> during
+	template class, you must always use <ï¿½> during
 	object declaration.
--	Classes cannot be “overloaded”, but the compiler will
+-	Classes cannot be ï¿½overloadedï¿½, but the compiler will
 	permit you to instantiate the same template class in
 	multiple ways. Each distinct instantiation results 
 	in a completely distinct class!

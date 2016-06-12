@@ -9,7 +9,6 @@ int main() {
 
 	stack<string> myStack;
 
-	
 	if (myStack.isEmpty())
 		cout << "int stack is empty" << endl << endl;
 	else

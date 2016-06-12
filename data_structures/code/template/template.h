@@ -28,7 +28,7 @@ GENERIC PROGRAMMING
 
 TEMPLATES
 
--	C++ provides templates to implement generic
+-	C++ provides template to implement generic
 	functions and classes.
 -	A function template is not a function, it is a
 	design or pattern for a function.
@@ -49,10 +49,10 @@ void swap(Object &lhs, Object &rhs) {
 int main() {
 	int x = 5;
 	int y = 7;
-	string a = “hello”;
-	string b = “there”;
+	string a = ï¿½helloï¿½;
+	string b = ï¿½thereï¿½;
 	swap <int>(x, y); //int replaces Object
 	swap <string>(a, b); //string replaces Object
-	cout << x << “ “ << y << endl;
-	cout << a << “ “ << b << endl;
+	cout << x << ï¿½ ï¿½ << y << endl;
+	cout << a << ï¿½ ï¿½ << b << endl;
 }
