@@ -1,3 +1,6 @@
+#ifndef LIST_3358_H
+#define LIST_3358_H
+
 /*
 * lab3_3358_ll.h
 *
@@ -23,7 +26,6 @@
 // -none of the elements.  This is called EOL (End Of List).
 //
 // This class uses a doubly linked list to implement the list ADT.
-
 
 class List_3358 {
 
@@ -148,10 +150,10 @@ public:
 	// sum:
 	// Preconditions: Cursor is not at EOL.
 	// Postconditions: Returns the sum of the list.
+
 	int sum();
 
 private:
-
 	// Node type for doubly linked list.
 	struct Node {
 		int value;
@@ -166,4 +168,4 @@ private:
 	int sumNodes(Node *p);
 };
 
-#endif /* LAB3_3358_LL_H_ */
+#endif
