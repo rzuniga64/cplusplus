@@ -27,39 +27,46 @@ public:
 	// Postconditions: Contents of bag is deallocated
 	~Bag();
 
-	//************************************
+    //***********************************************************
+    // isEmpty():
+    // Preconditions: none.
+    // Postconditions: True if the bag is empty, false otherwise.
+
+    void isEmpty(int element);
+
+    //***********************************************************
 	// add:
 	// Preconditions: Bag is not full.
 	// Postconditions: The item has been added to the bag and 
 	//   the count is increased by one..
 	void add(int element);
 
-	//************************************
+    //***********************************************************
 	// remove:
 	// Preconditions: none
 	// Postconditions: The item  is removed from the bag and 
 	//   the count is decreased by one.
 	void remove(int element);
 
-	//************************************
+    //***********************************************************
 	// occurrences(x):
 	// Preconditions: none.
 	// Postconditions: How many times is x in the bag.
 	int occurrences(int element) const;
 
-	//************************************
+    //***********************************************************
 	// isEmpty:
 	// Preconditions: none
 	// Postconditions: is the Bag empty
 	bool isEmpty() const;
 
-	//************************************
+    //***********************************************************
 	// size:
 	// Preconditions: none.
 	// Postconditions: returns the number of elements.
 	int size() const;
 
-	//************************************
+    //***********************************************************
 	// operator=:
 	// Preconditions: none.
 	// Postconditions: assigns the values of another bag to this bag.

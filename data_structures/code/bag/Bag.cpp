@@ -8,7 +8,7 @@ Bag::Bag() {
 
 Bag::Bag(const Bag &rhs) {
 	data = new int[rhs.capacity];
-	capacity = rhs.capacity;
+	capacity = rhs.capacity;	// copy values
 	count = rhs.count;
 	for (int i = 0; i < count; i++) {
 		data[i] = rhs.data[i];
@@ -17,6 +17,10 @@ Bag::Bag(const Bag &rhs) {
 
 Bag::~Bag() {
 	delete[] data;
+}
+
+void Bag::isEmpty(int element) const {
+	return (count == 0);
 }
 
 void Bag::add(int element) {
@@ -66,6 +70,14 @@ int Bag::size() const {
 	return count;
 }
 
-void Bag::operator=(int element) {
-
+void Bag::operator=(const Bag &rhs) {
+	//delete old array
+	if (data) delete [] data;
+	//allocate new array
+	data = new int[rhs.capacity];
+	capacity = rhs.capacity; //copy values
+	count = rhs.count;
+	for (int i=0; i<count; i++) {
+		data[i] = rhs.data[i];
+	}
 }
