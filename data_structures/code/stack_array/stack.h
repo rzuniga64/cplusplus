@@ -18,7 +18,7 @@
 		IMPLEMENTING A STACK CLASS
 		
 		Array implementations:
-		- fixed arrays: size doesn�t change
+		- fixed arrays: size doesn't change
 		- dynamic arrays: can resize as needed in push
 		- Linked List: grow and shrink in size as needed
 */
@@ -43,12 +43,11 @@ private:
 };
 
 template <typename T>
-stack<T>::stack() {
-	// no need to initialize the static array stack.
+stack<T>::stack() { .
 	top = -1;	//empty
 }
 
-//	isEmpty: Returns true if the stack is empty, false otherwise.
+//	isEmpty: Returns true if the stack is contains no elements, false otherwise.
 template <typename T>
 bool stack<T>::isEmpty() const {
 	return (top == -1);
@@ -60,13 +59,13 @@ bool stack<T>::isFull() const{
 	return (top == SIZE - 1);
 }
 
-// Makes the stack an empty stack
+// Removes all the elements
 template <typename T>
 void stack<T>::makeEmpty() {
 	top = -1;
 }
 
-//	push: Member function pushes the argument onto the stack
+//	push: Add a value on to the top of the stack
 template <typename T>
 void stack<T>::push(T value) {
 	// make sure it�s not full first.
