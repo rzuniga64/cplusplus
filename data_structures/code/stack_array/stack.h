@@ -1,39 +1,26 @@
 /*
-	Stack: a data structure that holds a collection of
-	elements of the same type.
-	- The elements are accessed according to LIFO
-	order: last in, first out
+	Stack: a data structure that holds a collection of elements of the same type.
+	- The elements are accessed according to LIFO, order: last in, first out
 	- No random access to other elements
 
 	STACK OPERATIONS
-	Operations:
-	-	push: add a value onto the top of the stack
-		-	make sure it’s not full first.
-	-	pop: remove (and return) the value from the top of the stack
-		-	make sure it’s not empty first.
-	-	isFull: true if the stack is currently full, i.e.,has no
-		more space to hold additional elements
+	Operations: These operations should take constant time: O(1).
+	-	push: add a value onto the top of the stack. Make sure it is not full first.
+	-	pop: remove (and return) the value from the top of the stack. Make sure it is not empty first.
+	-	isFull: true if the stack is currently full, i.e.,has no more space to hold additional elements
 	-	isEmpty: true if the stack currently contains no elements
+	-	Stack overflow: trying to push an item onto a full stack
+	-	Stack underflow. trying to pop an item from an empty stack
 
-		These operations should take constant time: O(1).
-
-	-	makeEmpty: removes all the elements 
-		This is allowed to take longer than constant time.
-
-		Stack overflow:
-		- trying to push an item onto a full stack
-
-		Stack underflow.
-		- trying to pop an item from an empty stack
+		This operations should take constant time: O(n).
+	-	makeEmpty: removes all the elements
 
 		IMPLEMENTING A STACK CLASS
 		
 		Array implementations:
-		- fixed arrays: size doesn’t change
+		- fixed arrays: size doesnï¿½t change
 		- dynamic arrays: can resize as needed in push
-		
-		Linked List
-		- grow and shrink in size as needed
+		- Linked List: grow and shrink in size as needed
 */
 
 #include <assert.h>
@@ -55,7 +42,7 @@ private:
 	int top;
 };
 
-template <typename T> 
+template <typename T>
 stack<T>::stack() {
 	// no need to initialize the static array stack.
 	top = -1;	//empty
@@ -82,7 +69,7 @@ void stack<T>::makeEmpty() {
 //	push: Member function pushes the argument onto the stack
 template <typename T>
 void stack<T>::push(T value) {
-	// make sure it’s not full first.
+	// make sure itï¿½s not full first.
 	assert(!isFull());
 	top++;
 	mystack[top] = value;
@@ -91,7 +78,7 @@ void stack<T>::push(T value) {
 //	pop: Pops the value at the top of the stack off, and returns it.
 template <typename T>
 T stack<T>::pop(){
-	// make sure it’s not empty first.
+	// make sure itï¿½s not empty first.
 	assert(!isEmpty());
 	T temp = mystack[top];
 	top--;
