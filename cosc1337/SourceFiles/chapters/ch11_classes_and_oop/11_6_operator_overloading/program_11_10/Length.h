@@ -4,6 +4,15 @@
 
  using namespace std;
 
+ /**
+  * Operators such as =, +, ==, and others can be redefined to work over objects of a class
+  * - The name of thefunction defining the overloaded operator s followed by the operator symbol:
+  * operator + to overload the + operator
+  * operator = to overload the - operator
+  * - just loke a regular member function
+  * - prototype goes in the class declaration
+  * - function definition goes in implementation file
+  */
  class Length
  {
  private:
