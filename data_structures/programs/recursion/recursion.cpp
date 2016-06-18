@@ -162,12 +162,12 @@ int numChars(char target, string str) {
 * greatest common divisor
 * Greatest common divisor of two non-zero ints is the largest positive integer 
 * that divides the numbers without a remainder
-* This is a variant of Euclid’s algorithm:
+* This is a variant of Euclidï¿½s algorithm:
 *
 * gcd(x,y) = y if y divides x evenly, otherwise:
 * gcd(x,y) = gcd(y,remainder of x/y) //gcd(y,x%y) in c++
 *
-* It’s a recursive mathematical definition
+* Itï¿½s a recursive mathematical definition
 * If x < y, then x%y is x (so gcd(x,y) = gcd(y,x))
 * This moves the larger number to the first position.
 */
@@ -191,7 +191,7 @@ int gcd(int x, int y) {
 * F0 = 0
 * F1 = 1
 * Fi = Fi-1 + Fi-2 (for i > 1)
-* It’s a recursive definition
+* Itï¿½s a recursive definition
 */
 
 int fib(int x) {
@@ -208,7 +208,7 @@ int fib(int x) {
 * Why are there so many calls to fib?
 * Say it computes fib(n-2) first.
 * When it computes fib(n-1), it computes fib(n-2) again
-* It’s not just double the work. It’s double the work for
+* Itï¿½s not just double the work. Itï¿½s double the work for
 * each recursive call.
 * Each recursive call does more and more redundant work
 *
@@ -259,13 +259,13 @@ int main() {
 	cout << "sumVec2 " << sumVec2(b) << endl;
 	cout << "size " << b.size() << endl;
 
-	List_3358 myList;
+	//List_3358 myList;
 
-	myList.insert(42);
-	myList.insert(52);
-	myList.insert(12);
+	//myList.insert(42);
+	//myList.insert(52);
+	//myList.insert(12);
 
-	cout << "linked list sum " << myList.sum() << endl;
+	//cout << "linked list sum " << myList.sum() << endl;
 
 	string mystring = "Mississippi";
 	cout << mystring << " number of chars: " << numChars('s', mystring) << endl;
