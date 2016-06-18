@@ -204,8 +204,7 @@ void indigenous_vs_exogenous_data() {
 		string major;
 	};
 
-	// exogenous data reside outside the structure,
-	// and are pointed to from the structure-> Teacher's name
+	// exogenous data reside outside the structure, and are pointed to from the structure-> Teacher's name
 	struct Teacher {
 		int idNumber;
 		string *name;
@@ -249,8 +248,6 @@ void shallow_copy_vs_deep_copy() {
 	//	of their addresses. May require allocating new
 	//	memory for the new value.
 }
-
-
 
 // Call by value is the default
 // Problem: lots of copying if vector is large
