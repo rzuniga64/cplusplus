@@ -4,26 +4,14 @@
 	-	The elements are accessed according to FIFO
 		order: first in, first out
 	-	No random access to other elements
-	
-	Examples:
-	- people in line at a theatre box office
-	- restocking perishable inventory
 
 	OPERATIONS
-	-	enqueue: add a value onto the rear of the queue (the
-		end of the line)
-		- make sure it’s not full first.
-	-	dequeue: remove a value from the front of the queue
-		(the front of the line) “Next!”
-		- make sure it’s not empty first.
-	-	isFull: true if the queue is currently full, i.e.,has no
-		more space to hold additional elements
+    These operations should take constant time: O(1)
+ 	-	isFull: true if the queue is currently full, i.e.,has no more space to hold additional elements
 	-	isEmpty: true if the queue currently contains no elements
-	
-		These operations should take constant time: O(1)
-
-	-	makeEmpty: removes all the elements
-		his is allowed to take longer than constant time.
+	-	enqueue: add a value onto the rear of the queue (the end of the line). Make sure it is not full first.
+	-	dequeue: remove a value from the front of the queue (the front of the line). Make sure it is not empty first.
+	-	makeEmpty: removes all the elements his is allowed to take longer than constant time.
 
 		QUEUE ILLUSTRATED
 
@@ -49,43 +37,31 @@
 		involve managing multiple processes.
 		-	For example, imagine the print queue for a computer lab.
 		-	Any computer can add a new print job to the queue (enqueue).
-		-	The printer performs the dequeue operation and
-			starts printing that job.
+		-	The printer performs the dequeue operation and starts printing that job.
 		-	While it is printing, more jobs are added to the Q
-		-	When the printer finishes, it pulls the next job
-			from the Q, continuing until the Q is empty
+		-	When the printer finishes, it pulls the next job from the Q, continuing until the Q is empty
 
 		IMPLEMENTING A QUEUE CLASS
-		-	Just like stacks, queues can be implemented
-			using arrays (fixed size, or resizing dynamic
-			arrays) or linked lists (dynamic queues), and
-			may be implemented using templates.
-		-	The previous illustration assumed we were using
-			an array to implement the queue
-		-	When an item was dequeued, the items were
-			NOT shifted up to fill the slot vacated by
-			dequeued item (why not?)
+		-	Just like stacks, queues can be implemented using arrays (fixed size, or resizing dynamic arrays) or linked
+		    lists (dynamic queues), and may be implemented using templates.
+		-	The previous illustration assumed we were using an array to implement the queue
+		-	When an item was dequeued, the items were NOT shifted up to fill the slot vacated by dequeued item (why not?)
 		-	Instead, both front and rear indices move in the array
 
 		PROBLEM: END OF THE ARRAY
 		-	When front and rear indices move in the array:
 		-	problem: rear hits end of array quickly
 		-	solution: wrap index around to front of array
-		-	To “wrap” the rear index back to the front of the
-			array, you can use this code to increment rear
-			during enqueue:
-		-	To “wrap” the rear index back to the front of the
-			array, you can use this code to increment rear during enqueue:
+		-	To 'wrap' the rear index back to the front of the array, you can use this code to increment rear during enqueue:
+		-	To 'wrap' the rear index back to the front of the array, you can use this code to increment rear during enqueue:
 			if (rear == queueSize - 1)
 				rear = 0;
 			else
 				rear = rear+1;
-		-	the fllowing code is equivalent, but shorter
-			(assuming 0 <= rear < queueSize):
+		-	the fllowing code is equivalent, but shorter (assuming 0 <= rear < queueSize):
 			rear = (rear + 1) % queueSize;
 
 		-	Do the same for advancing the front index.
-
 			_	_	_	_	_	7	9	6		3	_	_	_	_	7	9	6		3	4	_	_	_	7	9	6
 								f		r		r					f					r				f
 
@@ -109,8 +85,7 @@
 							r		f						   rf									r	f
 
 		-	How do we define isFull and isEmpty?
-		-	Use a counter variable, numItems, to keep track of
-			the total number of items in the queue.
+		-	Use a counter variable, numItems, to keep track of the total number of items in the queue.
 		-	enqueue: numItems++
 		-	dequeue: numItems--
 		-	isEmpty is true when numItems == 0
@@ -130,16 +105,12 @@
 			needed to store the elements at that time
 			
 		LINKED LIST
-		-	code is actually simpler than array with resizing,
-			especially for queues.
-		-	space used by elements is always proportional to
-			number of elements (only wasted space is for the
-			pointers)
+		-	code is actually simpler than array with resizing, especially for queues.
+		-	space used by elements is always proportional to number of elements (only wasted space is for the pointers)
 			
 		SUMMARY:
 		-	array implementation is probably better for small objects.
-		-	linked list is probably better for large objects if space
-			is scarce or copying is expensive (resizing)
+		-	linked list is probably better for large objects if space is scarce or copying is expensive (resizing)
 */
 
 #include <assert.h>
@@ -150,15 +121,14 @@ template <typename T>
 class queue {
 public:
 	queue();
-
-	void enqueue(T value);
-	T dequeue();
 	bool isEmpty() const;
 	bool isFull() const;
 	void makeEmpty();
+	void enqueue(T value);
+	T dequeue();
 private:
-	static const int queueSize = 100;	// capacity of the queue
-	T queueArray[queueSize];			// queue array
+	ArrayList<Object> myqueue;
+	int size;
 	int front;							// subscript of the queue front
 	int rear;							// subscript of the queue back
 	int	numItems;						// Number of items in the queue
@@ -172,23 +142,67 @@ queue<T>::queue() {
 	front = 0;
 	rear = -1;
 	numItems = 0;
+    myqueue = new ArrayList<Object>();
+}
+
+template <typename T>
+queue<T>::~queue() {
+    delete[] myqueue;
+}
+
+template<typename T>
+queue<T>::queue(const queue & src) {
+    myqueue = new T[src.size];
+    size = src.size;
+    for (int i = 0; i < top; i++) {
+        myquyeue[i] = src.myqueue[i];
+    }
+}
+
+/********************************************
+isEmpty returns true if the queue is empty
+*********************************************/
+template <typename T>
+bool queue<T>::isEmpty() const {
+    return (numItems == 0);
+}
+
+/*******************************************
+	isFull returns true if the queue is full
+********************************************/
+template <typename T>
+bool queue<T>::isFull() const {
+    return (numItems == queueSize);
+}
+
+/**********************************
+	makeEmpty makes the stack empty
+**********************************/
+template <typename T>
+void queue<T>::makeEmpty() {
+    front = 0;
+    rear = -1;
+    numItems = 0;
 }
 
 /****************************************************
 	Enqueue inserts a value at the rear of the queue. 
 *****************************************************/
 template <typename T>
-void queue<T>::enqueue(T value) {
-	assert(!isFull());
-	
-	// Calculate the new rear position
-	rear = (rear + 1) % queueSize;
-
-	// Insert new item
-	queueArray[rear] = value;
-
-	// Update item count
-	numItems++;
+void queue<T>::enqueue(T value)
+{
+    if (isFull())
+        size *= 2;
+    T newQueue = new T[size];
+    for(int i=0; i<top; i++)
+    {
+        newQueue[i]=myqueue[i];
+        delete myqueue;
+        myqueue = newQueue;
+        rear = (rear + 1) % queueSize;
+        queueArray[rear] = value;
+        numItems++;
+    }
 }
 
 /***(********************************************
@@ -196,44 +210,16 @@ void queue<T>::enqueue(T value) {
 	queue and returns the value. 
 *************************************************/
 template <typename T>
-T queue<T>::dequeue() {
-	assert(!isEmpty());
-
-	// save the result to return 
-	T temp = queueArray[front];
-
-	// Advance the front
-	front = (front + 1) % queueSize;
-
-	// Update the item count
-	numItems--;
-
-	// return the front item
-	return temp;
-}
-
-/********************************************
-	isEmpty returns true if the queue is empty 
-*********************************************/
-template <typename T>
-bool queue<T>::isEmpty() const {
-	return (numItems == 0);
-}
-
-/*******************************************
-	isFull returns true if the queue is full 
-********************************************/
-template <typename T>
-bool queue<T>::isFull() const {
-	return (numItems == queueSize);
-}
-
-/**********************************
-	makeEmpty makes the stack empty 
-**********************************/
-template <typename T>
-void queue<T>::makeEmpty() {
-	front = 0;
-	rear = -1;
-	numItems = 0;
+void queue<T>::enqueue(T value) {
+    if (isFull())
+        size *= 2;
+    T newQueue = new T[size];
+    for (int i = 0; i < top; i++) {
+        newQueue[i] = myqueue[i];
+        delete myqueue;
+        myqueue = newQueue;
+        rear = (rear + 1) % queueSize;
+        queueArray[rear] = value;
+        numItems++;
+    }
 }
